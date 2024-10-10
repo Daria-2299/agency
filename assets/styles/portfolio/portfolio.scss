@@ -1,0 +1,101 @@
+@import "../vars";
+@import "../template";
+@import "../header";
+@import "../footer";
+@import "../aside";
+
+.body {
+  background-color: $bg-color-light;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-content {
+  @include main-content-style;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
+  gap: 30px;
+  @media (max-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    padding-top: 30px;
+  }
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-top: 20px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 100%;
+    min-height: 415px;
+    padding: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+    @media (max-width: $mobile) {
+      min-height: 350px;
+    }
+    @media (max-width: $mobile) {
+      min-height: 250px;
+    }
+    &--first {
+      background-image: url("../../images/portfolio/sofa.png");
+    }
+    &--second {
+      background-image: url("../../images/portfolio/keyboard.png");
+    }
+    &--third {
+      background-image: url("../../images/portfolio/work-media.png");
+    }
+    &--fourth {
+      background-image: url("../../images/portfolio/dddone.png");
+    }
+    &--fifth {
+      background-image: url("../../images/portfolio/abstract.png");
+    }
+    &--sixth {
+      background-image: url("../../images/portfolio/handp.png");
+    }
+    &--seventh {
+      background-image: url("../../images/portfolio/architect.png");
+    }
+    &--eighth {
+      background-image: url("../../images/portfolio/calc.png");
+    }
+    &--ninth {
+      background-image: url("../../images/portfolio/sport.png");
+    }
+  }
+  &__item-tag {
+    width: fit-content;
+    padding: 5px 10px;
+    @include text-explanation;
+    color: $text-dark;
+    background-color: $text-light;
+    border-radius: 19px;
+    text-align: center;
+    @include hover-cursor;
+  }
+  &__item-link {
+    text-decoration: none;
+    @include text-title;
+    color: $text-light;
+  }
+}

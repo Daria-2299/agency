@@ -1,0 +1,35 @@
+@import "../vars";
+@import "../template";
+@import "../header";
+@import "../footer";
+@import "../aside";
+@import "../newsletter";
+@import "../blog-cards";
+
+.body {
+  background-color: $bg-color-light;
+}
+
+.main-content {
+  @include main-content-style;
+  text-align: center;
+}
+
+.blog-cards {
+  padding: 50px 0;
+  border-bottom: 1px solid $line-color;
+  @include light-blocks;
+  &--first {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.blog-card-item {
+  &__picture {
+    height: 336px;
+  }
+}
+
+.newsletter {
+  border-bottom: 1px solid $line-color;
+}
